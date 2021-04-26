@@ -1,4 +1,4 @@
-import { Book } from "../types/Book";
+import { Book, BookHTTPRequestModel } from "../types/book";
 import { HttpClient } from "./httpClient";
 
 export class BookService extends HttpClient {
@@ -10,5 +10,5 @@ export class BookService extends HttpClient {
 
     public getById = (id : number) => this.instance.get<Book>(`/api/Book/${id}`);
 
-    // public add = () => this.instance.posts
+    public add = (body : BookHTTPRequestModel) => this.instance.post<Book>('/api/Book', body);
 }

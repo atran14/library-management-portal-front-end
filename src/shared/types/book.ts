@@ -6,3 +6,10 @@ export interface Book {
     authors: string;
     description: string;
 }
+
+export interface BookHTTPRequestModel {
+    name: string;
+    categoryId: number;
+    authors?: string;
+    description?: string;
+}
